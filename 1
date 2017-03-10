@@ -27,3 +27,66 @@ print(a.size())
 a.push(3)
 print(a.pop())
 print(a.size())
+
+
+class Queue:
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def enqueue(self, item):
+        self.items.insert(0,item)
+
+    def dequeue(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)
+
+a = Queue()
+print(a.isEmpty())
+a.enqueue(1)
+a.enqueue(2)
+a.enqueue(3)
+print(a.size())
+print(a.dequeue())
+print(a.dequeue())
+print(a.dequeue())
+
+
+
+class Deque:
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def addFront(self, item):
+        self.items.append(item)
+
+    def addRear(self, item):
+        self.items.insert(0,item)
+
+    def removeFront(self):
+        return self.items.pop()
+
+    def removeRear(self):
+        return self.items.pop(0)
+
+    def size(self):
+        return len(self.items)
+
+a=Deque()
+print(a.isEmpty())
+a.addRear(1)
+a.addRear(2)
+a.addFront(3)
+a.addFront(4)
+print(a.size())
+print(a.isEmpty())
+a.addRear(8.4)
+print(a.removeRear())
+print(a.removeFront())
